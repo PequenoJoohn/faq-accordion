@@ -1,0 +1,118 @@
+body {
+    font-family: $workSans;
+    background-image: url("../assets/images/background-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: contain;
+    background-color: $lightPink;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 30px;
+
+        section {
+            background: $white;
+            min-width: 325px;
+            max-width: 100%;
+            width: 100%;
+            padding: 1.5rem 1rem;
+            border-radius: 8px;
+
+            h1 {
+                padding: 0 1rem 1.2765rem 3rem;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    left: 0;
+                    background-image: url("/assets/images/icon-star.svg");
+                    background-repeat: no-repeat;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    background-size: contain;
+                    position: absolute;
+                }
+            }
+
+            .accordion {
+                font-weight: bold;
+                border: 0;
+                background: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+
+                p {
+                    text-align: start;
+                    font-weight: 600;
+                    font-family: $workSans;
+                    max-width: 200px;
+                    width: 100%;
+                }
+            }
+
+            .panel {
+                display: none;
+
+                p {
+                    padding-top: 1rem;
+                    font-weight: 400;
+                    color: $grayishPurple;
+                    font-size: 14px;
+                    line-height: 1.2rem;
+                }
+            }
+
+            .line {
+                background-color: $grayishPurple;
+                opacity: 0.1;
+                height: 1px;
+                margin: 1.5rem 0;
+            }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 40px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        background-image: url("../assets/images/background-pattern-desktop.svg");
+
+        main {
+            section {
+                padding: 1.5rem 2rem;
+                max-width: 480px;
+
+                h1 {
+                    font-size: 38px;
+                    position: relative;
+
+                    &::before {
+                        height: 2rem;
+                        width: 2rem;
+                        top: 6px;
+                    }
+                }
+
+                .accordion {
+                    p {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
